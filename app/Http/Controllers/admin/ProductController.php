@@ -67,8 +67,6 @@ class ProductController extends Controller
 
     public function update(Request $request,Product $idProduct)
     {
-        //
-        // $category = DB::table("categories")->orderByDesc('id')->take(1)->get();
         $attributes=$request->validate([
             "nameProduct"=>"required|min:2|max:150|unique:products,nameProduct",
             "description"=>"required",
@@ -79,35 +77,23 @@ class ProductController extends Controller
             "idUser"=>"required"
         ]);
 
-        // foreach($category as $category)
-        // {
-        //     $attributes["idCategory"] = $category->id;
-        // }
-
         $productId = $idProduct->id;
-        // dd($productId);
 
         if(isset($attributes["pictureFirst"])){
-            // $attributes["pictureFirst"]=$request->file("pictureFirst")->store("produits");
             $attributes["pictureFirst"]=Storage::disk('public')->put('product',$request->pictureFirst);
 
         }
-        //Mettre a jour dans la bdd le pays avec les nouvelles de ses attributs.
         $idProduct->update($attributes);
         session()->flash("success","Le produit a bien était modifier");
         return redirect("/allPictureProduct/$productId");
-
-
     }
 
 
     public function destroy(Product $idProduct)
     {
-        //
         $idProduct->delete();
         session()->flash("success","Le produit a bien était supprimer");
         return redirect("/product");
-
     }
 
 
