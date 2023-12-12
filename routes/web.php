@@ -142,10 +142,13 @@ Route::put('/panier/{idPanier}', [PanierController::class, "update"]);
 Route::delete('/panier/{idPanier}', [PanierController::class, "destroy"]);
 Route::delete("/panier", [PanierController::class, "vider"]);
 
-
-
+Route::middleware("EstAdmin")->group(function () {
 // ---------------------------------Route Profil--------------------------------------------------
 Route::get('/profil', [ProfilController::class, "index"]);
+
+
+});
+
 
 
 Route::get('/dashboard', function () {
