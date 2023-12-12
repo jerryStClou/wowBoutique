@@ -15,12 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $user = Auth::user();
-        // dd($user->name);
         $products = Product::get();
-        $nbrProduct = count($products);
-        // dd(count($products));
-        return view("admin.produit.index",["products"=>$products,"user"=>$user,"nbrProduct"=>$nbrProduct]);
+        return view("admin.profil.index",["products"=>$products]);
     }
 
     public function create()
