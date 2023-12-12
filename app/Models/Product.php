@@ -34,8 +34,18 @@ class Product extends Model
     }
 
     // Un produit ne peut avoir qu'une seule catgerie donc il faut mettre belongsTo()
+
     public function categories(){
     return $this->belongsTo(Category::class,'idCategory');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class,'idUser');
+    }
+
+
+    public function comments(){
+        return $this->hasMany(Comment::class,"idProduct");
     }
 
     //Produit est en relation avec note une classe associative alors on doit mettre belongsToMany()
@@ -43,8 +53,5 @@ class Product extends Model
         return $this->belongsToMany(User::class,"notes","idUser","idProduct")->using(Note::class)->withPivot("theNote")->withTimestamps();
     }
 
-    public function comments(){
-        return $this->hasMany(Comment::class,"idProduct");
-    }
 
 }
