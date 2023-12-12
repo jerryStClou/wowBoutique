@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string("pictureFirst");
             $table->integer("quantityProduct");
             $table->foreignId("idCategory")->constrained("categories","id")->onDelete("cascade");
+            $table->foreignId("idUser")->constrained("users","id")->onDelete("cascade");
             $table->timestamps();
         });
     }
