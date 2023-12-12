@@ -111,8 +111,8 @@ Route::delete('/subCategory/{idSubCategory}', [SubCategoryController::class, "de
 
 
 
-
-
+Route::middleware("auth")->group(
+    function () {
 // ---------------------------------Route Comment--------------------------------------------------
 Route::get('/comment', [CommentController::class, "index"]);
 
@@ -127,6 +127,11 @@ Route::get('/comment/{idComment}/edit', [CommentController::class, "edit"]);
 Route::put('/comment/{idComment}', [CommentController::class, "update"]);
 
 Route::delete('/comment/{idComment}', [CommentController::class, "destroy"]);
+
+
+    }
+);
+
 
 
 
