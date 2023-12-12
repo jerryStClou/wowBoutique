@@ -43,6 +43,8 @@ class ProductController extends Controller
         {
             $attributes["idCategory"] = $category->id;
         }
+        $user = Auth::user();
+        $attributes["idUser"] = $user->id;
         Product::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
@@ -73,7 +75,8 @@ class ProductController extends Controller
             "prix"=>"required",
             "pictureFirst"=>"image",
             "quantityProduct" => "required",
-            "idCategory"=>"required"
+            "idCategory"=>"required",
+            "idUser"=>"required"
         ]);
 
         // foreach($category as $category)

@@ -54,6 +54,7 @@ edit produit
                 @enderror
             </div>
             <input type="hidden" name="idCategory" value="{{$product->idCategory}}">
+            <input type="hidden" name="idUser" value="{{$product->idUser}}">
             <button type="submit" class="btn btn-success">Valider</button>
         </form>
     </div>
