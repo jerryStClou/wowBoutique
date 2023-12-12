@@ -61,7 +61,7 @@ class ProductController extends Controller
 
     public function edit(Product $idProduct)
     {
-        //
+
         return view("admin.produit.edit",["product" => $idProduct]);
     }
 
@@ -94,7 +94,7 @@ class ProductController extends Controller
         }
         //Mettre a jour dans la bdd le pays avec les nouvelles de ses attributs.
         $idProduct->update($attributes);
-        session()->flash("success","Le pays a bien était modifier");
+        session()->flash("success","Le produit a bien était modifier");
         return redirect("/allPictureProduct/$productId");
 
 
@@ -105,7 +105,7 @@ class ProductController extends Controller
     {
         //
         $idProduct->delete();
-        session()->flash("success","Le pays a bien était supprimer");
+        session()->flash("success","Le produit a bien était supprimer");
         return redirect("/product");
 
     }
