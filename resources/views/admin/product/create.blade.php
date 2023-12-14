@@ -52,6 +52,12 @@ create produit
                 @enderror
             </div>
 
+            <select name="idCategory" id="">
+                @foreach ( $categories as $category )
+                <option value="{{$category->id}}">{{$category->nameCategory}}</option>
+                @endforeach
+            </select>
+
             <button type="submit" class="btn btn-success">Valider</button>
         </form>
     </div>

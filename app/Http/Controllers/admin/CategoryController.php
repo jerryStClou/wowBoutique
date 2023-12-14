@@ -30,12 +30,26 @@ class CategoryController extends Controller
             "nameCategory"=>"required|min:2|max:150|unique:categories,nameCategory",
         ]);
 
+        // dd($attributes);
 
         Category::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
-        return  redirect("/subCategory/create");
+        return  redirect("/category/allCateg");
 
+    }
+
+    public function allCateg()
+    {
+        $categories = Category::get();
+        return view("admin.subCategory.create",["categories"=>$categories]);
+    }
+
+
+    public function allCategP()
+    {
+        $categories = Category::get();
+        return view("admin.product.create",["categories"=>$categories]);
     }
 
     public function read(Category $idCategory)

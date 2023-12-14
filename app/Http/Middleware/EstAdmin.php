@@ -19,7 +19,7 @@ class EstAdmin
         // return $next($request);
         $utilisateur = $request->user();
 
-        if (isset($utilisateur) && $utilisateur->role->nom == "admin") {
+        if (isset($utilisateur) && $utilisateur->roles->nameRole == "admin") {
             return $next($request);
         } else {
             abort(404);

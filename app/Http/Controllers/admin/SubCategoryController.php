@@ -30,18 +30,20 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $category = DB::table("categories")->orderByDesc('id')->take(1)->get();
+        // $category = DB::table("categories")->orderByDesc('id')->take(1)->get();
         $attributes=$request->validate([
             "nameSubCategory"=>"required|min:2|max:150|unique:sub_categories,nameSubCategory",
+            "idCategory"=>"required"
         ]);
-        foreach($category as $category)
-        {
-            $attributes["idCategory"] = $category->id;
-        }
+        // foreach($category as $category)
+        // {
+        //     $attributes["idCategory"] = $category->id;
+        // }
+        // dd($attributes);
         SubCategory::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
-        return  redirect("/product/create");
+        return  redirect("/category/allCategP");
 
     }
 

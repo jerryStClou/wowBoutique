@@ -22,12 +22,24 @@ use App\Http\Controllers\PanierController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('pageVierge');
 });
 
 // Route::get("/urlContact", [HomeController::class, "formulaireContact"]);
 // Route::post("/urlContact", [HomeController::class, "traitementContact"]);
+
+
+
+Route::get("/home", [HomeController::class, "home"]);
+Route::get("/home/compte", [HomeController::class, "compte"]);
+
+
 
 // -----------------------------------------Route Contact -----------------------------------------------------------
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
@@ -42,6 +54,10 @@ Route::get('/category', [CategoryController::class, "index"]);
 Route::get('/category/create', [CategoryController::class, "create"]);
 
 Route::post('/category', [CategoryController::class, "store"]);
+
+Route::get('/category/allCateg', [CategoryController::class, "allCateg"]);
+
+Route::get('/category/allCategP', [CategoryController::class, "allCategP"]);
 
 Route::get('/category/{idCategory}', [CategoryController::class, "read"]);
 
@@ -142,12 +158,9 @@ Route::put('/panier/{idPanier}', [PanierController::class, "update"]);
 Route::delete('/panier/{idPanier}', [PanierController::class, "destroy"]);
 Route::delete("/panier", [PanierController::class, "vider"]);
 
-Route::middleware("EstAdmin")->group(function () {
 // ---------------------------------Route Profil--------------------------------------------------
 Route::get('/profil', [ProfilController::class, "index"]);
 
-
-});
 
 
 

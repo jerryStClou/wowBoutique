@@ -28,23 +28,26 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        $category = DB::table("categories")->orderByDesc('id')->take(1)->get();
+        // $category = DB::table("categories")->orderByDesc('id')->take(1)->get();
         $attributes=$request->validate([
             "nameProduct"=>"required|min:2|max:150|unique:products,nameProduct",
             "description"=>"required",
             "prix"=>"required",
             "pictureFirst"=>"image",
             "quantityProduct" => "required",
+            "idCategory"=>"required"
         ]);
 
         // $attributes["pictureFirst"]=$request->file("pictureFirst")->store("produits");
         $attributes["pictureFirst"]=Storage::disk('public')->put('product',$request->pictureFirst);
-        foreach($category as $category)
-        {
-            $attributes["idCategory"] = $category->id;
-        }
+        // foreach($category as $category)
+        // {
+        //     $attributes["idCategory"] = $category->id;
+        // }
         $user = Auth::user();
+        // dd($user);
         $attributes["idUser"] = $user->id;
+        // dd($attributes);
         Product::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
@@ -56,7 +59,7 @@ class ProductController extends Controller
     {
         //
 
-        return view("admin.produit.read",["product" => $idProduct]);
+        return view("admin.product.read",["product" => $idProduct]);
     }
 
     public function edit(Product $idProduct)

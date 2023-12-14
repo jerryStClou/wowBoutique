@@ -16,12 +16,14 @@ class PanierController extends Controller
         //$panier recuperer tout les informations dans CartFacade
         $panier = CartFacade::getContent();
         $products = Product::get();
+        // dd($products[(count($products))-1]["pictureFirst"]);
         $tableaux = [["image"]];
-        foreach($products as $product )
+        for($i;$i<count($products);$i++)
         {
-            $tableaux[0][$product->id] = $product->pictureFirst;
-            // dd($tableaux[0][2]);
+            $tableaux[$i][$products[(count($products))-1]["id"]] = $products[(count($products))-1]["pictureFirst"];
+            dd($tableaux[0]);
         }
+
 
 
 
@@ -36,9 +38,7 @@ class PanierController extends Controller
         //     "idProduct" => "required|exists:products,id",
         // ]);
         // $product = Product::where("id",$request->idProduct)->get();
-        $product = DB::table('products')
-                ->where('id', '=', $request->idProduct)
-                ->get();
+        $product = Product::where('id', '=', $request->idProduct)->get();
         foreach($product as $product)
         {
             // dd($product->id);

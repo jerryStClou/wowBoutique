@@ -39,12 +39,9 @@ class Product extends Model
     public function categories(){
     return $this->belongsTo(Category::class,'idCategory');
     }
-
     public function user(){
         return $this->belongsTo(User::class,'idUser');
     }
-
-
     public function comments(){
         return $this->hasMany(Comment::class,"idProduct");
     }

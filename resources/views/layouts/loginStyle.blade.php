@@ -12,6 +12,7 @@
         width: 99%;
         height: 99vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -20,6 +21,9 @@
     {
         border:3px solid black;
         width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .inputStyle
