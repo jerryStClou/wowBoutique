@@ -403,7 +403,7 @@
 .imageCard
 {
     border: 3px solid black;
-    height: 20vh;
+    height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -411,7 +411,7 @@
 
 .imageCard img
 {
-    width: 70%;
+    width: 55%;
 }
 
 .infoCard

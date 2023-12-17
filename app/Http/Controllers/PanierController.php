@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Category;
 
 class PanierController extends Controller
 {
@@ -17,17 +18,23 @@ class PanierController extends Controller
         $panier = CartFacade::getContent();
         $products = Product::get();
         // dd($products[(count($products))-1]["pictureFirst"]);
-        $tableaux = [["image"]];
-        for($i;$i<count($products);$i++)
-        {
-            $tableaux[$i][$products[(count($products))-1]["id"]] = $products[(count($products))-1]["pictureFirst"];
-            dd($tableaux[0]);
-        }
+        // $tableaux = [["image"]];
+        // dd($products[0]["id"]);
+        // for($i=0;$i<count($products);$i=$i+1)
+        // {
+        //     // $tableaux[$i] = $products[$i]["pictureFirst"];
+        //     dd($i);
+        // }
+        $categories = Category::take(4)->get();
+        $tableaux = [["quantiterProduct"], ["image"],["coût"],["quantiterPanier"],["idPanier"]];
+        // dd($tableaux);
 
-
-
-
-    return view("client.panier.index",["panier" => $panier,"tableaux"=>$tableaux]);
+    return view("client.panier.index",[
+        "panier" => $panier,
+        "tableaux"=>$tableaux,
+        "products"=>$products,
+        "categories"=>$categories
+    ]);
     }
 
     public function store(Request $request)

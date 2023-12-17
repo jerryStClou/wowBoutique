@@ -1,5 +1,5 @@
 <style>
-    .ensemble
+.ensemble
 {
     display: flex;
     /* border: 2px solid black; */
@@ -10,7 +10,7 @@
 {
     /* border: 2px solid blue; */
     width: 35%;
-    height: 40vh;
+    /* height: 40vh; */
 }
 
 .leProduit
@@ -31,8 +31,16 @@
 {
     border: 3px solid black;
     width: 30%;
-    height: 20vh;
+    height: 25vh;
     margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageProduit img
+{
+    width: 60%
 }
 
 .infoProduit
@@ -42,6 +50,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-around */
+}
+
+.infoProduit button
+{
+    margin: 2%;
 }
 
 .quantite
@@ -51,12 +65,12 @@
     justify-content: space-between;
     border: 2px solid black;
     width: 85%;
-    height: 6vh;
+    /* height: 6vh; */
 }
 
 .ajoutPanier
 {
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
 }
 
 .quantite button
@@ -89,9 +103,11 @@
 
 .infoProduit form
 {
-    /* border: 1px solid green; */
+    border: 1px solid green;
     width: 90%;
 }
+
+
 
 .SupprimerStyle
 {
@@ -157,7 +173,7 @@
     background-color: #FD384F;
     height: 8vh;
     font-size: 1.2em;
-    width: 70%;
+    width: 100%;
     cursor: pointer;
 }
 

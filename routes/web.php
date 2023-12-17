@@ -38,6 +38,7 @@ Route::get('/', function () {
 
 Route::get("/home", [HomeController::class, "home"]);
 Route::get("/home/compte", [HomeController::class, "compte"]);
+Route::get("/home/categ/{idHomeCateg}", [HomeController::class, "homeCateg"]);
 
 
 
@@ -159,13 +160,24 @@ Route::delete('/panier/{idPanier}', [PanierController::class, "destroy"]);
 Route::delete("/panier", [PanierController::class, "vider"]);
 
 // ---------------------------------Route Profil--------------------------------------------------
-Route::get('/profil', [ProfilController::class, "index"]);
+Route::middleware("EstAdmin")->group(
+    function () {
+     Route::get('/profil', [ProfilController::class, "index"]);
+
+});
+
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', [ProfilController::class, "dashboard"])->middleware(['auth'])->name('dashboard');
+
+
+
 
 require __DIR__.'/auth.php';

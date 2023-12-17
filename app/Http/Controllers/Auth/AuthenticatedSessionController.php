@@ -17,8 +17,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        // return view('auth.login');
-        return view('compte.compte');
+        return view('auth.login');
+        // return view('compte.compte');
     }
 
     /**
@@ -50,6 +50,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/home');
     }
 }

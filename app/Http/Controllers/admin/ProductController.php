@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Comment;
 
 class ProductController extends Controller
 {
@@ -58,8 +59,10 @@ class ProductController extends Controller
     public function read(Product $idProduct)
     {
         //
-
-        return view("admin.product.read",["product" => $idProduct]);
+        $categoryId=$idProduct->idCategory;
+        $comments = Comment::where("idProduct",$idProduct->id)->get();
+        $productsCateg=Product::where("idCategory",$categoryId)->get();
+        return view("admin.product.read",["product" => $idProduct,"comments"=>$comments,"productsCateg"=>$productsCateg]);
     }
 
     public function edit(Product $idProduct)

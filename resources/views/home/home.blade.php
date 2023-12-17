@@ -30,7 +30,7 @@ home
             <p>{{$produitVetement->nameProduct}}</p>
             <p>{{$produitVetement->prix}}</p>
             <p>{{$produitVetement->quantityProduct}}</p>
-            <a href="/product/{{$produitVetement->id}}">voir le produit</a>
+            <a href="/product/{{$produitVetement->id}}">{{__('message.seeProduct')}}</a>
         </div>
     </div>
     @endforeach
@@ -50,7 +50,7 @@ home
             <p>{{$produitElec->nameProduct}}</p>
             <p>{{$produitElec->prix}}</p>
             <p>{{$produitElec->quantityProduct}}</p>
-            <a href="/product/{{$produitElec->id}}">voir le produit</a>
+            <a href="/product/{{$produitElec->id}}">{{__('message.seeProduct')}}</a>
         </div>
     </div>
     @endforeach

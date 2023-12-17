@@ -19,8 +19,9 @@ class ContactUsFormController extends Controller
               'email' => 'required|email',
               'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
               'subject'=>'required',
-              'message' => 'required'
-           ]);
+              'message' => 'required',
+           ],
+        );
           //  Store data in database
           Contact::create($request->all());
           //

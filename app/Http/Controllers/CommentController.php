@@ -17,6 +17,7 @@ class CommentController extends Controller
         //
         $comments = Comment::get();
         return view("comment.index",["comments"=>$comments]);
+
     }
 
     public function create()
@@ -29,10 +30,10 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
-        $products = DB::table("products")->orderByDesc('id')->take(1)->get();
         $attributes=$request->validate([
             "theComment"=>"required|min:2|max:150|unique:comments,theComment",
             "profilPicture"=>"image",
+            "idProduct"=>"required"
         ]);
 
         // $attributes["pictureFirst"]=$request->file("pictureFirst")->store("produits");
@@ -40,15 +41,12 @@ class CommentController extends Controller
         // $utilisateur = auth()->user();
         // dd($utilisateur->id);
         $attributes["idUser"] = auth()->user()->id;
-        foreach($products as $products)
-        {
-            $attributes["idProduct"] = $products->id;
-        }
-
+        $productId=$request->idProduct;
+        // dd($attributes);
         Comment::create($attributes);
         session()->flash("success","Le comment a bien été ajouter");
 
-        return  redirect("/comment");
+        return  redirect("/product/$productId");
 
     }
 

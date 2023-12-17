@@ -133,6 +133,32 @@ nav
 }
 
 
+.liens2Div form
+{
+    width: 15%;
+    /* border: 1px solid red; */
+}
+
+.liens2Div form button
+{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid white;
+    background: white;
+    font-size: 1.2em;
+    color: #434242;
+}
+
+
+
+.liens2Div form button:hover
+{
+    color: white;
+    background-color: #434242;
+
+}
+
 .panierLien i
 {
     font-size: 1.2em;
