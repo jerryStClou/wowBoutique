@@ -35,7 +35,7 @@ class CategoryController extends Controller
         Category::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
-        return  redirect("/category/allCateg");
+        return  redirect("/profil");
 
     }
 
@@ -74,7 +74,7 @@ class CategoryController extends Controller
 
         $idCategory->update($attributes);
         session()->flash("success","Le pays a bien était modifier");
-        return redirect("/category");
+        return redirect("/profil");
 
 
     }

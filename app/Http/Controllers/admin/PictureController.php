@@ -45,7 +45,7 @@ class PictureController extends Controller
         PictureProduct::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
-        return  redirect("/allPictureProduct/$productId");
+        return  redirect("/profil");
 
     }
 
@@ -101,7 +101,7 @@ class PictureController extends Controller
         //Mettre a jour dans la bdd le pays avec les nouvelles de ses attributs.
         $idPictureProduct->update($attributes);
         session()->flash("success","Le pays a bien était modifier");
-        return redirect("/allPictureProduct/$productId");
+        return redirect("/profil");
 
 
     }

@@ -55,17 +55,18 @@
 .description
 {
     border: 3px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+    height: 40vh;
     width: 60%;
     overflow: auto;
 }
 
 .description p
 {
-    font-size: 1.1em;
+    width: 85%;
+    /* margin-top: 2%;
+    margin-left: 7%; */
+    margin: auto;
+    /* text-align: center; */
 }
 
 .panierStyle
@@ -78,64 +79,23 @@
 
 
 
-
-
-
-.panierStyle
+.panierStyle button
 {
-    /* border: 1px dashed black; */
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin-top: 2%
-}
-
-
-
-
-.panierAjoutStyle
-{
-    width: 100%;
-    height: 7vh;
-    background-color: #1177d6a8;
-    border: 1px solid #1177d6a8;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
+    border: 1px solid #ffd958;
+    background-color: #ffd958;
+    height: 8vh;
+    margin-top: 3%;
     font-size: 1.2em;
     cursor: pointer;
 }
 
 
-
-.panierAjoutStyle:hover
+.panierStyle button:hover
 {
-    background: #033768a8;
+    border-color: #9e7a05df;
+    background-color: #9e7a05df;
     color: white;
 }
-
-
-.prixPanierStyle
-{
-    font-size: 1.6em;
-    font-weight: bold;
-    margin-left: 4%;
-}
-
-
-.quantiterPanierDiv
-{
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin-left: 2%;
-}
-
-
 
 .lesBoutons
 {
@@ -177,7 +137,7 @@
 
 .boutonsCommentaires
 {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
 }
@@ -238,7 +198,7 @@
 }
 
 
-.sousGroupeCommentaire
+.leleFameuxCommentaire
 {
     /* border: 2px solid black; */
     margin-top: 1%;
@@ -293,12 +253,20 @@
     overflow: auto;
     margin: 2%;
 }
+
+
+.commentaireDuProfil p
+{
+    font-size: 1.1em;
+    width: 80%;
+    margin: auto;
+}
 /* ----------------------------------------ajoutCommentaireStyle ------------------- */
 
 
 .ajoutCommentaire
 {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -403,7 +371,7 @@
 .imageCard
 {
     border: 3px solid black;
-    height: 25vh;
+    height: 27vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -411,7 +379,7 @@
 
 .imageCard img
 {
-    width: 55%;
+    width: 68%;
 }
 
 .infoCard
@@ -466,6 +434,27 @@
     } */
 
 
+    .panierStyleLiens
+    {
+        width: 45%;
+        height: 7vh;
+        background-color: #20c0e8c2;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 1.2em;
+        margin-top: 5%;
+    }
+
+
+
+    .panierStyleLiens:hover
+    {
+        background: #0b6379c2;
+        color: white;
+    }
 /* ----------------------------------------Style Bloc 3-------------------------------------- */
 
 
@@ -586,11 +575,55 @@ opacity:1;
 {
     .bloc1 img
     {
-      width: 95%;
+      width: 85%;
+    }
+
+    .imageCard img
+    {
+        width: 87%;
     }
 }
 
-@media screen and (max-width: 984px)
+@media screen and (max-width: 978px)
+{
+    .leProfil
+    {
+        border: 2px solid black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: baseline;
+        width: 40%;
+    }
+    .imgProfil
+    {
+        width: 100%;
+        height: 25vh;
+    }
+
+    .imgProfil img
+    {
+        width: 60%;
+    }
+
+    .infoProfil
+    {
+        width: 100%;
+    }
+
+    .infoProfil p
+    {
+        /* margin-top: 0%;
+        margin-bottom: 0%; */
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.05em;
+    }
+}
+
+@media screen and (max-width:767px)
 {
     .grosBloc
     {
@@ -598,13 +631,13 @@ opacity:1;
     }
     .bloc1
     {
-        height: 30vh;
-        width: 25%;
+        width: 70%;
+
     }
 
     .bloc1 img
     {
-       width: 45%;
+       width: 66%;
     }
     .contenueBloc2
     {
@@ -619,12 +652,13 @@ opacity:1;
     }
     .bloc3
     {
-        border: 1px solid black;
+        border: 1px solid blue;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: auto;
+        /* height: 30vh; */
     }
     .pStyle
     {
@@ -633,8 +667,30 @@ opacity:1;
     }
     .description
     {
-        height: 15vh;
+        /* height: 30vh;    */
+        width: 80%;
     }
+    .panierStyle
+    {
+        width: 100%;
+    }
+
+    .panierStyle button
+    {
+        width: 90%;
+    }
+    .panierStyleLiens
+    {
+        width: 80%;
+        height: 6vh;
+    }
+
+    .lesBoutons
+    {
+        width: 80%;
+    }
+
+
     .imageStyleform
     {
         height: 15vh;
@@ -655,40 +711,57 @@ opacity:1;
     {
         height: 14vh;
     }
-    .panierStyle
+    /* .panierStyle
     {
         width: 30%;
-    }
+    } */
     .panierStyle button
     {
         font-size: 1em;
     }
 
-
-
     .boutonStyle
     {
-        height: 4vh;
+        height: 5vh;
         width: 100%;
         font-size: 0.9em;
     }
-    .produitSimilaire
+
+
+    .lesProduitCards
     {
-        width: 50%;
+        border: 1px solid blue;
+        width: 98%;
+    }
+    .produitSimilaire2
+    {
+        border: 1px solid red;
+        width: 100%;
         margin: auto;
     }
     .card
     {
-        height: 35vh;
+        /* height: 35vh; */
     }
     .imageCard img
     {
-        width: 95%;
+        width: 80%;
 
+    }
+
+    .commentairesBouton
+    {
+        height: 7vh;
+    }
+
+
+    .commentairesBouton2
+    {
+        height: 7vh;
     }
 }
 
-
+/*
 @media screen and (max-width: 767px)
 {
     .bloc1
@@ -703,19 +776,39 @@ opacity:1;
     {
         width: 45%;
     }
+} */
+
+
+@media screen and (max-width:657px)
+{
+    .bloc1 img
+    {
+        width: 75%;
+    }
+
+    .imageCard img
+    {
+        width: 100%;
+    }
 }
 
 
 @media screen and (max-width: 564px)
 {
+    .bloc1 img
+    {
+        width: 90%;
+    }
 
-    .bloc1
+
+    .imageCard
     {
         height: 23vh;
     }
-    .bloc1 img
+
+    .imageCard img
     {
-        width: 65%;
+        width: 100%;
     }
 }
 
@@ -724,17 +817,59 @@ opacity:1;
 @media screen and (max-width: 500px)
 {
 
-    .bloc1
+    /* .bloc1
     {
         height: 18vh;
     }
     .bloc1 img
     {
         width: 55%;
-    }
+    } */
     .card
     {
         width: 55%;
+        height: 60vh;
+    }
+    .imageCard
+    {
+        height: 40vh;
+    }
+
+    .imageCard img
+    {
+        width: 95%;
+    }
+    .boutonsCommentaires
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .commentairesBouton
+    {
+        width: 90%;
+        height: 4vh;
+    }
+
+    .commentairesBouton2
+    {
+        width: 90%;
+        height: 4vh;
+    }
+
+    .leFameuxCommentaire
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .leProfil
+    {
+        width: 60%;
+    }
+
+    .commentaireDuProfil
+    {
+        width: 95%;
     }
 }
 
@@ -742,11 +877,31 @@ opacity:1;
 
 @media screen and (max-width: 411px)
 {
-
     .bloc1
     {
-        height: 18vh;
+        width: 80%;
+        height: 93vh;
     }
+
+    .bloc1 img
+    {
+        width: 95%;
+    }
+    .contenuBloc3
+    {
+        width: 80%;
+    }
+
+    .imageCard
+    {
+        height: 35vh;
+    }
+
+    .imageCard img
+    {
+        width: 65%;
+    }
+
 }
 
 
@@ -757,11 +912,11 @@ opacity:1;
 
     .bloc1
     {
-        height: 18vh;
+        /* height: 18vh; */
     }
     .bloc1 img
     {
-        width: 73%;
+        width: 98%;
     }
     .ajoutPanierStyle
     {
@@ -775,22 +930,22 @@ opacity:1;
     }
     .lesProduitCards
     {
-        width: 75%;
+        width: 100%;
         min-height: 42vh;
         max-height: 48vh;
     }
     .card
     {
-        height: 25vh;
-        width: 60%;
+        height: 50vh;
+        width: 48%;
     }
     .imageCard
     {
-        height: 20vh;
+        height: 30vh;
     }
     .imageCard img
     {
-        width: 60%;
+        width: 80%;
     }
     .ajoutPanierStyle button
     {
@@ -803,11 +958,16 @@ opacity:1;
 {
     .bloc1
     {
-        height: 18vh;
+        height: 76vh;
+        width: 95%;
     }
     .bloc1 img
     {
-        width: 90%;
+        width: 99%;
+    }
+    .contenuBloc3
+    {
+        width: 98%;
     }
 }
 </style>

@@ -107,7 +107,7 @@
 
     .imgCardCateg img
     {
-        width: 75%;
+        width: 55%;
     }
 }
 
@@ -151,6 +151,11 @@
     .lesCardCateg
     {
         height: 44vh;
+    }
+
+    .imgCardCateg img
+    {
+        width: 40%;
     }
 
     .infoCarCateg a

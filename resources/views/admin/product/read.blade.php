@@ -22,8 +22,6 @@ read produit
                     <button type="submit" class="panierAjoutStyle">Ajouter aux panier</button>
                 </form>
             <div class="lesBoutons">
-                <button class="boutonStyle">G</button>
-                <button class="boutonStyle">D</button>
                 <button class="boutonStyle" id="boutonProduitSimiActiv">Produit similaire</button>
                 <button class="boutonStyle" id="boutonCommActiv">Commentaire</button>
             </div>
@@ -111,8 +109,7 @@ read produit
             <button type="submit" class="panierAjoutStyle">Ajouter aux panier</button>
         </form>
         <div class="lesBoutons">
-            <button class="boutonStyle">G</button>
-            <button class="boutonStyle">D</button>
+
             <button class="boutonStyle" id="boutonProduitSimiActiv2">Blog similaire</button>
             <button class="boutonStyle" id="boutonCommActiv2">Commentaire</button>
         </div>

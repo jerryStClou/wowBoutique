@@ -52,7 +52,7 @@ class ProductController extends Controller
         Product::create($attributes);
         session()->flash("success","Le produit a bien été ajouter");
 
-        return  redirect("/pictureProduct/create");
+        return  redirect("/profil");
 
     }
 
@@ -91,7 +91,7 @@ class ProductController extends Controller
         }
         $idProduct->update($attributes);
         session()->flash("success","Le produit a bien était modifier");
-        return redirect("/allPictureProduct/$productId");
+        return redirect("/profil");
     }
 
 

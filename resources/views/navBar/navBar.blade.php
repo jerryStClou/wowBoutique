@@ -26,7 +26,7 @@
                 {{-- <p class="nbrPanier">5</p> --}}
             </a>
             <a href="/contact">Contact</a>
-            <a href="">
+            {{-- <a href="">
                 {{ Config::get('languages')[App::getLocale()] }}
             </a>
             <select name="" id="">
@@ -36,7 +36,7 @@
                 @endif
                 @endforeach
 
-            </select>
+            </select> --}}
             <div class="boutonsNavBar" id="boutonsNavBar">
                 <div class="trait"></div>
                 <div class="trait"></div>
